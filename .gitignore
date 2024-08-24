@@ -4,3 +4,5 @@ extsample.ts
 .eslintrc.json
 .vscodeignore
 .vscode/*
+**/.gitignore
+**/node_modules/*
