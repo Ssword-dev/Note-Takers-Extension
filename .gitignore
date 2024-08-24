@@ -1,6 +1,6 @@
-node_modules/
-bower_components/
-*.log
-
-build/
-dist/
+**/test.*
+**/*.test.*
+extsample.ts
+.eslintrc.json
+.vscodeignore
+.vscode/*
