@@ -1,0 +1,96 @@
+{
+  "name": "intellisense-config-reader",
+  "displayName": "Hover Notes & custom Autocomplete",
+  "description": "Customizes auto-complete and hovers",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.92.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onLanguage:*",
+    "workspaceContains:intelrc.json",
+    "onStartupFinished"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "category": "Intellisense",
+        "command": "intellisense-config-reader.read-autocomplete-config",
+        "shortTitle": "Add new Intellisense config",
+        "title": "Add new Intellisense Autocomplete config "
+      },
+      {
+        "category": "Intellisense",
+        "command": "intellisense-config-reader.read-hover-config",
+        "shortTitle": "Add a new Intellisense Hover config",
+        "title": "Add a new Intellisense Hover config"
+      },
+      {
+        "category": "Intellisense",
+        "command": "intellisense-config-reader.read-color-config",
+        "title": "Add a new Intellisense Color config"
+      },
+      {
+        "category": "Intellisense",
+        "command": "Intellisense.customType",
+        "title": "Add a new Type hover (experimetal)"
+      },
+      {
+        "category": "Intellisense",
+        "command": "intellisense.dl",
+        "title": "Reload Intellisense Description Loader"
+      }
+    ],
+    "jsonValidation": [
+      {
+        "fileMatch": "*.vsi.json",
+        "url": "./schema/vsi-schema.json"
+      },
+      {
+        "fileMatch": "*.hvs.json",
+        "url": "./schema/hvs-schema.json"
+      },
+      {
+        "fileMatch": "*.cvs.json",
+        "url": "./schema/cvs-schema.json"
+      },
+      {
+        "fileMatch": "*.tsv.json",
+        "url": "./schema/tsv-schema.json"
+      },
+      {
+        "fileMatch": "*.inteldrc.json",
+        "url": "./schema/doc-schema.json"
+      }
+    ]
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.6",
+    "@types/node": "18.x",
+    "@types/vscode": "^1.92.0",
+    "@vscode/test-cli": "^0.0.9",
+    "@vscode/test-electron": "^2.4.0",
+    "eslint": "^8.57.0",
+    "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "vscode-languageclient": "^9.0.1",
+    "vscode-languageserver": "^9.0.1",
+    "vscode-languageserver-textdocument": "^1.0.12"
+  },
+  "author": {
+    "email": "ssword.dev@gmail.com",
+    "name": "Ssword"
+  },
+  "license":"MIT",
+  "publisher": "Ssword"
+}
